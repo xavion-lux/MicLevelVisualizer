@@ -1,4 +1,4 @@
-![MelonLoader](https://img.shields.io/badge/MelonLoader-v0.5.4-green?style=flat-square) ![PyroMod](https://img.shields.io/badge/UIExpansionKit-recommended-blue?style=flat-square) ![GitHub all releases](https://img.shields.io/github/downloads/xavion-lux/MicLevel/total?color=blue&style=flat-square)
+![MelonLoader](https://img.shields.io/badge/MelonLoader-v0.5.4-green?style=flat-square) ![PyroMod](https://img.shields.io/badge/UIExpansionKit-recommended-blue?style=flat-square) ![GitHub all releases](https://img.shields.io/github/downloads/xavion-lux/MicLevelVisualizer/total?color=blue&style=flat-square)
 
 # MicLevel
 
