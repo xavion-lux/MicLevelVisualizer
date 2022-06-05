@@ -47,4 +47,4 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         files: |
-          MicLevel\bin\Release\MicLevelVisualizer.dll
+          MicLevelVisualizer\bin\Release\MicLevelVisualizer.dll
