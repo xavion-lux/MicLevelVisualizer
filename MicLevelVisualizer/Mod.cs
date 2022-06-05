@@ -1,6 +1,7 @@
 ﻿using MelonLoader;
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,12 +28,19 @@ namespace MicLevelVisualizer
 
             MelonPreferences.CreateCategory(BuildInfo.Name, BuildInfo.Name);
             orientation = MelonPreferences.CreateEntry<string>(BuildInfo.Name, "slider_orientation", "horizontal", "Set slider orientation");
-            UIExpansionKit.API.ExpansionKitApi.RegisterSettingAsStringEnum(BuildInfo.Name, "slider_orientation", new[] { ("horizontal", "Horizontal"), ("vertical", "Vertical") });
+
+            if(MelonHandler.Mods.Any(m => m.Info.Name == "UI Expansion Kit"))
+            {
+                RegisterUIExpansionKit();
+            }
 
             orientation.OnValueChanged += (_, val) => SetOrientation(val);
 
             MelonCoroutines.Start(MakeUI());
         }
+
+        public void RegisterUIExpansionKit() 
+            => UIExpansionKit.API.ExpansionKitApi.RegisterSettingAsStringEnum(BuildInfo.Name, "slider_orientation", new[] { ("horizontal", "Horizontal"), ("vertical", "Vertical") });
 
         public IEnumerator MakeUI()
         {
