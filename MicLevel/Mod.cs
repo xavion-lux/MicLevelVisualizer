@@ -65,13 +65,18 @@ namespace MicLevel
             {
                 slider.transform.localScale = new Vector3(0.12f, 0.3f, 1f);
                 slider.transform.localPosition = new Vector3(-363f, -470f, 0f);
-                slider.transform.localRotation = new Quaternion(0, 0, 0, 1);
+                slider.transform.localEulerAngles = Vector3.zero;
+            }
+            else if(val.ToLower() == "vertical")
+            {
+                slider.transform.localScale = new Vector3(0.11f, 0.3f, 1f);
+                slider.transform.localPosition = new Vector3(-420f, -415f, 0f);
+                slider.transform.localEulerAngles = new Vector3(0f, 0f, 90f);
             }
             else
             {
-                slider.transform.localScale = new Vector3(0.11f, 0.3f, 1f);
-                slider.transform.localPosition = new Vector3(-418.5f, -415f, 0f);
-                slider.transform.localRotation = new Quaternion(0, 0, 90, 1);
+                MelonLogger.Warning($"Invalid orientation. Defaulting back to {orientation.DefaultValue}. ('horizontal' | 'vertical')");
+                orientation.Value = orientation.DefaultValue;
             }
         }
     }

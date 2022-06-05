@@ -34,8 +34,7 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>$(ProjectDir)..\Libs\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="DataModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DataModel">
       <HintPath>$(ProjectDir)..\Libs\Managed\DataModel.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
@@ -53,7 +52,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UIExpansionKit">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\VRChat\Mods\UIExpansionKit.dll</HintPath>
+      <HintPath>$(ProjectDir)..\Mods\UIExpansionKit.dll</HintPath>
     </Reference>
     <Reference Include="UnhollowerBaseLib">
       <HintPath>$(ProjectDir)..\Libs\Managed\UnhollowerBaseLib.dll</HintPath>

@@ -23,6 +23,13 @@ jobs:
         token: ${{ secrets.PAT }}
         path: Libs
 
+    - uses: robinraju/release-downloader@v1.3
+      with: 
+        repository: "knah/VRCMods"
+        latest: true
+        fileName: "UIExpansionKit.dll"
+        out-file-path: Mods
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
