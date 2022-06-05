@@ -4,14 +4,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MicLevel
+namespace MicLevelVisualizer
 {
     public static class BuildInfo
     {
-        public const string Name = "MicLevel";
-        public const string Author = "Xavi";
+        public const string Name = "MicLevelVisualizer";
+        public const string Author = "Xavi, MajoraDev";
         public const string Version = "1.0.0";
-        public const string DownloadLink = "https://github.com/xavion-lux/MicLevel/releases";
+        public const string DownloadLink = "https://github.com/xavion-lux/MicLevelVisualizer/releases";
     }
 
     public class Mod : MelonMod
@@ -42,10 +42,10 @@ namespace MicLevel
             var sliderRef = GameObject.Find("UserInterface").GetComponentInChildren<VRC.UI.Elements.QuickMenu>(true).field_Public_Transform_0.Find("Window/QMParent/Menu_AudioSettings/Content/Mic/InputLevel/Sliders/MicLevelSlider").gameObject;
 
             // smol slider if we don't wait here
-            while(sliderRef.GetComponent<RectTransform>().sizeDelta.x == 0) yield return null;  
+            while(sliderRef.GetComponent<RectTransform>().sizeDelta.x == 0) yield return null;
 
             // instantiating slider
-            slider = GameObject.Instantiate(sliderRef, GameObject.Find("UserInterface/UnscaledUI/HudContent_Old/Hud").transform);
+            slider = GameObject.Instantiate(sliderRef, GameObject.Find("UserInterface/UnscaledUI/HudContent_Old/Hud/VoiceDotParent").transform);
             try { GameObject.DestroyImmediate(slider.GetComponentInChildren<SliderBinding>()); } catch { } //optional
             SetOrientation(orientation.Value);
 
@@ -64,13 +64,13 @@ namespace MicLevel
             if(val.ToLower() == "horizontal")
             {
                 slider.transform.localScale = new Vector3(0.12f, 0.3f, 1f);
-                slider.transform.localPosition = new Vector3(-363f, -470f, 0f);
+                slider.transform.localPosition = new Vector3(0f, -55f, 0f);
                 slider.transform.localEulerAngles = Vector3.zero;
             }
             else if(val.ToLower() == "vertical")
             {
                 slider.transform.localScale = new Vector3(0.11f, 0.3f, 1f);
-                slider.transform.localPosition = new Vector3(-420f, -415f, 0f);
+                slider.transform.localPosition = new Vector3(-55f, 0f, 0f);
                 slider.transform.localEulerAngles = new Vector3(0f, 0f, 90f);
             }
             else

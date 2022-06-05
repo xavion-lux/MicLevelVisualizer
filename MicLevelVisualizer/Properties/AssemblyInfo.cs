@@ -36,6 +36,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-[assembly: MelonInfo(typeof(MicLevel.Mod), MicLevel.BuildInfo.Name, MicLevel.BuildInfo.Version, MicLevel.BuildInfo.Author, MicLevel.BuildInfo.DownloadLink)]
+[assembly: MelonInfo(typeof(MicLevelVisualizer.Mod), MicLevelVisualizer.BuildInfo.Name, MicLevelVisualizer.BuildInfo.Version, MicLevelVisualizer.BuildInfo.Author, MicLevelVisualizer.BuildInfo.DownloadLink)]
 [assembly: MelonGame("VRChat", "VRChat")]
 [assembly: MelonOptionalDependencies("UIExpansionKit")]

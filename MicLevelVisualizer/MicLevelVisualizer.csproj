@@ -7,8 +7,8 @@
     <ProjectGuid>{6AB742FD-57B4-40AE-8793-63E1F3199A36}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MicLevel</RootNamespace>
-    <AssemblyName>MicLevel</AssemblyName>
+    <RootNamespace>MicLevelVisualizer</RootNamespace>
+    <AssemblyName>MicLevelVisualizer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
