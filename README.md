@@ -1,6 +1,6 @@
 ![MelonLoader](https://img.shields.io/badge/MelonLoader-v0.5.4-green?style=flat-square) ![PyroMod](https://img.shields.io/badge/UIExpansionKit-recommended-blue?style=flat-square) ![GitHub all releases](https://img.shields.io/github/downloads/xavion-lux/MicLevelVisualizer/total?color=blue&style=flat-square)
 
-# MicLevel
+# MicLevelVisualizer
 
 This is a simple mod for VRChat to add a mic level slider (like in the audio settings tab) next to the mic icon on the HUD.<br>
 You can chose between a horizontal and vertical orientation.<br>
