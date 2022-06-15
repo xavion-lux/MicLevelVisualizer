@@ -11,7 +11,7 @@ namespace MicLevelVisualizer
     {
         public const string Name = "MicLevelVisualizer";
         public const string Author = "Xavi, MajoraDev";
-        public const string Version = "1.0.0";
+        public const string Version = "1.1.0";
         public const string DownloadLink = "https://github.com/xavion-lux/MicLevelVisualizer/releases";
     }
 
@@ -21,6 +21,7 @@ namespace MicLevelVisualizer
         private GameObject slider;
 
         public static MelonPreferences_Entry<string> orientation;
+        public static MelonPreferences_Entry<bool> hideSilent;
 
         public override void OnApplicationLateStart()
         {
@@ -28,7 +29,7 @@ namespace MicLevelVisualizer
 
             MelonPreferences.CreateCategory(BuildInfo.Name, BuildInfo.Name);
             orientation = MelonPreferences.CreateEntry<string>(BuildInfo.Name, "slider_orientation", "horizontal", "Set slider orientation");
-
+            hideSilent= MelonPreferences.CreateEntry<bool>(BuildInfo.Name, "hide_silent", false, "Hide when mic is silent");
             if(MelonHandler.Mods.Any(m => m.Info.Name == "UI Expansion Kit"))
             {
                 RegisterUIExpansionKit();
@@ -64,9 +65,14 @@ namespace MicLevelVisualizer
             sliderBackgroundImage.color = new Color(sliderBackgroundImage.color.r, sliderBackgroundImage.color.g, sliderBackgroundImage.color.b, 0.6f);
 
             // synchronize value between reference slider and our slider
-            sliderRef.GetComponentInChildren<Slider>().onValueChanged.AddListener(new Action<float>((value) => slider.GetComponentInChildren<Slider>().value = value));
+            sliderRef.GetComponentInChildren<Slider>().onValueChanged.AddListener(new Action<float>(OnVolumeChanged));
         }
 
+        void OnVolumeChanged(float vol)
+        {
+            slider.GetComponentInChildren<Slider>().value = vol;
+            if(hideSilent.Value) slider.SetActive(vol>0.03f);//seems to be about where vrc starts lighting up the mic icon
+        }
         public void SetOrientation(string val)
         {
             if(val.ToLower() == "horizontal")
